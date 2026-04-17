@@ -1,4 +1,5 @@
 {
+  "name": "Home page",
   "sections": {
     "hero-showcase": {
       "type": "hero-showcase",
@@ -10,7 +11,7 @@
         "button_link": "/collections/all"
       }
     },
-    "dynamic-grid-1": {
+    "dynamic-grid": {
       "type": "dynamic-grid",
       "settings": {
         "title": "Featured Categories",
@@ -38,65 +39,11 @@
         ]
       }
     },
-    "featured-products": {
-      "type": "featured-products",
+    "featured-collection": {
+      "type": "featured-collection",
       "settings": {
         "title": "Best Sellers",
         "collection": "best-sellers"
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "settings": {
-        "title": "What Our Customers Say"
-      }
-    },
-    "blog-posts": {
-      "type": "blog-posts",
-      "settings": {
-        "title": "Latest from Our Blog",
-        "blog": "news"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "title": "Stay Updated",
-        "subtitle": "Subscribe to our newsletter for exclusive offers"
-      }
-    },
-    "dynamic-grid-2": {
-      "type": "dynamic-grid",
-      "settings": {
-        "title": "Trending Now",
-        "items": [
-          {
-            "title": "New Arrivals",
-            "image": "shopify://shop_images/trend1.jpg",
-            "link": "/collections/new-arrivals"
-          },
-          {
-            "title": "Sale",
-            "image": "shopify://shop_images/trend2.jpg",
-            "link": "/collections/sale"
-          },
-          {
-            "title": "Accessories",
-            "image": "shopify://shop_images/trend3.jpg",
-            "link": "/collections/accessories"
-          },
-          {
-            "title": "Gifts",
-            "image": "shopify://shop_images/trend4.jpg",
-            "link": "/collections/gifts"
-          }
-        ]
-      }
-    },
-    "instagram-feed": {
-      "type": "instagram-feed",
-      "settings": {
-        "title": "Follow Us on Instagram"
       }
     },
     "premium-footer": {
@@ -109,13 +56,8 @@
   },
   "order": [
     "hero-showcase",
-    "dynamic-grid-1",
-    "featured-products",
-    "testimonials",
-    "blog-posts",
-    "newsletter",
-    "dynamic-grid-2",
-    "instagram-feed",
+    "dynamic-grid",
+    "featured-collection",
     "premium-footer"
   ]
 }
