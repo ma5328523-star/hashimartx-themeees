@@ -1,0 +1,114 @@
+{{ 'section-featured-collection.css' | asset_url | stylesheet_tag }}
+
+<section class="featured-collection" data-section-type="featured-collection">
+  <div class="featured-collection-container">
+    <div class="featured-collection-header">
+      <h2 class="featured-collection-title">
+        {{ section.settings.title }}
+      </h2>
+      {% if section.settings.show_description %}
+        <p class="featured-collection-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+      {% if section.settings.show_view_all %}
+        <a href="{{ collections[section.settings.collection].url }}" class="view-all-btn">
+          {{ 'collection.view_all' | t }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="featured-collection-grid" style="--columns: {{ section.settings.products_per_row }};">
+      {% if section.settings.collection != blank %}
+        {% assign collection = collections[section.settings.collection] %}
+        {% for product in collection.products limit: section.settings.limit %}
+          <div class="featured-product-item">
+            {% render 'product-card', product: product %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="collection-placeholder">
+          <p>{{ 'collection.no_products' | t }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.1}s`;
+      
+      const wishlistBtn = card.querySelector('.wishlist-btn');
+      if (wishlistBtn) {
+        wishlistBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.classList.toggle('active');
+        });
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products Per Row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Maximum Products",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 8
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Handpicked selection of our premium products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show Description",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View All' Button",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}

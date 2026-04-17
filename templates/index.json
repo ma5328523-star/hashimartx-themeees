@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "hero-showcase": {
+      "type": "hero-showcase",
+      "settings": {
+        "title": "Welcome to HashiMartX",
+        "subtitle": "Premium Products for the Modern Lifestyle",
+        "image": "shopify://shop_images/hero-image.jpg",
+        "button_text": "Shop Now",
+        "button_link": "/collections/all"
+      }
+    },
+    "dynamic-grid-1": {
+      "type": "dynamic-grid",
+      "settings": {
+        "title": "Featured Categories",
+        "items": [
+          {
+            "title": "Electronics",
+            "image": "shopify://shop_images/category1.jpg",
+            "link": "/collections/electronics"
+          },
+          {
+            "title": "Fashion",
+            "image": "shopify://shop_images/category2.jpg",
+            "link": "/collections/fashion"
+          },
+          {
+            "title": "Home & Garden",
+            "image": "shopify://shop_images/category3.jpg",
+            "link": "/collections/home-garden"
+          },
+          {
+            "title": "Sports",
+            "image": "shopify://shop_images/category4.jpg",
+            "link": "/collections/sports"
+          }
+        ]
+      }
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Best Sellers",
+        "collection": "best-sellers"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "title": "What Our Customers Say"
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "Latest from Our Blog",
+        "blog": "news"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Stay Updated",
+        "subtitle": "Subscribe to our newsletter for exclusive offers"
+      }
+    },
+    "dynamic-grid-2": {
+      "type": "dynamic-grid",
+      "settings": {
+        "title": "Trending Now",
+        "items": [
+          {
+            "title": "New Arrivals",
+            "image": "shopify://shop_images/trend1.jpg",
+            "link": "/collections/new-arrivals"
+          },
+          {
+            "title": "Sale",
+            "image": "shopify://shop_images/trend2.jpg",
+            "link": "/collections/sale"
+          },
+          {
+            "title": "Accessories",
+            "image": "shopify://shop_images/trend3.jpg",
+            "link": "/collections/accessories"
+          },
+          {
+            "title": "Gifts",
+            "image": "shopify://shop_images/trend4.jpg",
+            "link": "/collections/gifts"
+          }
+        ]
+      }
+    },
+    "instagram-feed": {
+      "type": "instagram-feed",
+      "settings": {
+        "title": "Follow Us on Instagram"
+      }
+    },
+    "premium-footer": {
+      "type": "premium-footer",
+      "settings": {
+        "newsletter_title": "Join Our Community",
+        "newsletter_subtitle": "Get exclusive access to new products and special offers"
+      }
+    }
+  },
+  "order": [
+    "hero-showcase",
+    "dynamic-grid-1",
+    "featured-products",
+    "testimonials",
+    "blog-posts",
+    "newsletter",
+    "dynamic-grid-2",
+    "instagram-feed",
+    "premium-footer"
+  ]
+}

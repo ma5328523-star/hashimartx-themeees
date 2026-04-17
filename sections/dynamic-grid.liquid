@@ -1,0 +1,85 @@
+{{ 'section-dynamic-grid.css' | asset_url | stylesheet_tag }}
+
+<section class="dynamic-grid" data-section-type="dynamic-grid">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="grid-container">
+      {% for item in section.settings.items %}
+        <div class="grid-item">
+          <a href="{{ item.link }}" class="grid-link">
+            <div class="grid-image">
+              <img src="{{ item.image | img_url: 'medium' }}" alt="{{ item.title }}" loading="lazy">
+            </div>
+            <h3 class="grid-title">{{ item.title }}</h3>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        gsap.to(item, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+      });
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, { scale: 1, duration: 0.3, ease: "power2.out" });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Dynamic Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Categories"
+    },
+    {
+      "type": "range",
+      "id": "items_per_row",
+      "label": "Items per row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Grid Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Category Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Grid"
+    }
+  ]
+}
+{% endschema %}

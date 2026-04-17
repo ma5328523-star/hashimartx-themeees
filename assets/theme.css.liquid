@@ -1,0 +1,405 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* CSS Variables - Apple-Style Design System */
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #121212;
+  --color-blue: #007AFF;
+  --color-gray-light: #F5F5F7;
+  --color-gray-medium: #E5E5E7;
+  --color-gray-dark: #86868B;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --spacing-luxury: {{ settings.section_spacing }}px;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.15);
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --transition-fast: 0.2s ease;
+  --transition-standard: 0.4s ease;
+  --transition-smooth: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+/* Header Styles - Apple Glass Morphism */
+.blur-glass-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all var(--transition-standard);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-black);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color var(--transition-standard);
+  white-space: nowrap;
+}
+
+.logo a:hover {
+  color: var(--color-blue);
+}
+
+.main-nav {
+  flex: 1;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color var(--transition-standard);
+  position: relative;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-blue);
+  transition: width var(--transition-fast);
+}
+
+.main-nav a:hover {
+  color: var(--color-blue);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.header-actions a {
+  color: var(--color-black);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-medium);
+  transition: all var(--transition-standard);
+}
+
+.header-actions a:hover {
+  background: var(--color-gray-light);
+  transform: scale(1.1);
+}
+
+.header-actions svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  transition: transform var(--transition-standard);
+}
+
+/* Section Spacing */
+section {
+  padding: var(--spacing-luxury) 0;
+}
+
+/* Product Cards - Apple Style */
+.product-card {
+  background: var(--color-white);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: all var(--transition-standard);
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px);
+}
+
+/* Buttons - Apple Style */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  background: var(--color-blue);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--radius-large);
+  font-weight: 600;
+  transition: all var(--transition-standard);
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0056CC;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Minimalist Mode */
+{% if settings.theme_mode == 'minimalist' %}
+  :root {
+    --color-accent: var(--color-black);
+  }
+  .btn {
+    background: var(--color-black);
+  }
+  .btn:hover {
+    background: #333;
+  }
+{% endif %}
+
+/* Vibrant Mode */
+{% if settings.theme_mode == 'vibrant' %}
+  :root {
+    --color-accent: var(--color-blue);
+  }
+  .product-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 122, 255, 0.2);
+  }
+{% endif %}
+
+/* Apple-Style Enhancements */
+
+/* Ample Whitespace */
+main {
+  padding: 2rem 0;
+}
+
+section {
+  padding: 4rem 1.5rem;
+}
+
+section + section {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Container Spacing */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Typography Refinements */
+p {
+  margin: 0 0 1.5rem 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 2px;
+}
+
+/* Form Elements - Apple Style */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+  border: 1px solid var(--color-gray-medium);
+  border-radius: var(--radius-medium);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all var(--transition-standard);
+  background: var(--color-white);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="search"]:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--color-gray-dark);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+  outline: none;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  section {
+    padding: 2.5rem 1rem;
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+::-moz-selection {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* Loading State */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Error States */
+.error {
+  color: #f44336;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.warning {
+  color: #ff9800;
+}
+
+.info {
+  color: var(--color-blue);
+}
+
+/* Utility Classes */
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Responsive Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-gray-medium);
+}
+
+th {
+  background: var(--color-gray-light);
+  font-weight: 600;
+}
+
+/* Mobile First */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .main-nav ul {
+    gap: 1.5rem;
+  }
+  
+  .logo a {
+    font-size: 1.25rem;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+  }
+}

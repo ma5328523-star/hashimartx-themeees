@@ -1,0 +1,167 @@
+{
+  "general": {
+    "site_title": "{{ shop.name }}",
+    "search": "Search",
+    "search_results": "Search Results",
+    "cart": {
+      "title": "Cart",
+      "empty": "Your cart is empty",
+      "continue_shopping": "Continue Shopping",
+      "view_cart": "View Cart",
+      "checkout": "Checkout",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "taxes": "Taxes",
+      "total": "Total",
+      "note": "Order Special Instructions",
+      "apply_discount": "Apply Discount Code"
+    },
+    "menu": "Menu",
+    "close": "Close",
+    "shop": "Shop",
+    "about": "About Us",
+    "contact": "Contact",
+    "home": "Home",
+    "loading": "Loading...",
+    "no_results": "No results found",
+    "404_title": "Page Not Found",
+    "404_message": "The page you're looking for doesn't exist or has been moved."
+  },
+  "product": {
+    "title": "Product",
+    "price": "Price",
+    "compare_at_price": "Regular Price",
+    "sale_price": "Sale Price",
+    "sold_out": "Sold Out",
+    "quantity": "Quantity",
+    "add_to_cart": "Add to Cart",
+    "unavailable": "Unavailable",
+    "variant_sold_out": "This variant is sold out",
+    "description": "Description",
+    "details": "Details",
+    "reviews": "Reviews",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "faq": "FAQ",
+    "card": {
+      "quick_view": "Quick View",
+      "add_to_cart": "Add to Cart",
+      "add_to_wishlist": "Add to Wishlist",
+      "in_stock": "In Stock",
+      "low_stock": "Only {{ count }} left",
+      "out_of_stock": "Out of Stock"
+    },
+    "details_trigger": "Show More",
+    "details_close": "Show Less"
+  },
+  "collection": {
+    "title": "Collection",
+    "view_all": "View All",
+    "filter": "Filter",
+    "sort": "Sort",
+    "products": "Products",
+    "no_products": "No products in this collection",
+    "sort_options": {
+      "best_selling": "Best Selling",
+      "alphabetically_a_z": "Alphabetically (A-Z)",
+      "alphabetically_z_a": "Alphabetically (Z-A)",
+      "price_low_to_high": "Price (Low to High)",
+      "price_high_to_low": "Price (High to Low)",
+      "newest": "Newest"
+    }
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "shipping": "Shipping Policy",
+    "returns": "Returns & Refunds",
+    "faq": "FAQ",
+    "newsletter": {
+      "title": "Subscribe to Our Newsletter",
+      "description": "Get the latest updates on new products and exclusive offers",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe",
+      "success": "Thank you for subscribing!",
+      "error": "Please enter a valid email"
+    },
+    "follow_us": "Follow Us",
+    "copyright": "© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved."
+  },
+  "social": {
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "snapchat": "Snapchat",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "pinterest": "Pinterest",
+    "youtube": "YouTube"
+  },
+  "customer": {
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "register": "Create Account",
+    "my_account": "My Account",
+    "orders": "My Orders",
+    "addresses": "My Addresses",
+    "order": "Order",
+    "order_number": "Order Number",
+    "order_date": "Order Date",
+    "order_status": "Order Status",
+    "payment_method": "Payment Method",
+    "shipping_address": "Shipping Address",
+    "billing_address": "Billing Address",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "forms": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "address": "Address",
+    "city": "City",
+    "state": "State/Province",
+    "zip": "Postal Code",
+    "country": "Country",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "required": "Required",
+    "optional": "Optional",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "message": "Message",
+    "subject": "Subject"
+  },
+  "errors": {
+    "general": "Something went wrong. Please try again.",
+    "form": "Please correct the errors below:",
+    "required_field": "This field is required",
+    "invalid_email": "Please enter a valid email address",
+    "password_mismatch": "Passwords do not match",
+    "out_of_stock": "This item is out of stock",
+    "invalid_variant": "Please select a valid option"
+  },
+  "hero": {
+    "welcome": "Welcome to {{ shop.name }}",
+    "subtitle": "Discover premium products crafted with excellence",
+    "cta": "Shop Now"
+  },
+  "benefits": {
+    "free_shipping": "Free Shipping",
+    "free_shipping_desc": "On orders over $50",
+    "easy_returns": "Easy Returns",
+    "easy_returns_desc": "30-day return guarantee",
+    "secure_checkout": "Secure Checkout",
+    "secure_checkout_desc": "SSL encrypted transactions",
+    "customer_support": "24/7 Support",
+    "customer_support_desc": "Dedicated customer service"
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "rating": "Rating",
+    "verified_purchase": "Verified Purchase"
+  }
+}

@@ -1,0 +1,64 @@
+{{ 'section-hero-showcase.css' | asset_url | stylesheet_tag }}
+
+<section class="hero-showcase" data-section-type="hero-showcase">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ section.settings.title }}</h1>
+      <p class="hero-subtitle">{{ section.settings.subtitle }}</p>
+      <a href="{{ section.settings.button_link }}" class="hero-button">{{ section.settings.button_text }}</a>
+    </div>
+    <div class="hero-image">
+      <img src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.title }}" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    gsap.from('.hero-title', { opacity: 0, y: 50, duration: 1, delay: 0.2 });
+    gsap.from('.hero-subtitle', { opacity: 0, y: 30, duration: 1, delay: 0.5 });
+    gsap.from('.hero-button', { opacity: 0, y: 20, duration: 1, delay: 0.8 });
+    gsap.from('.hero-image img', { opacity: 0, scale: 1.1, duration: 1.5, delay: 0.3 });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Hero Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Welcome to HashiMartX"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Premium Products for the Modern Lifestyle"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Showcase"
+    }
+  ]
+}
+{% endschema %}
